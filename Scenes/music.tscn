@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://8y8oges7sj3v"]
+
+[ext_resource type="AudioStream" uid="uid://3yxoxsymcvt4" path="res://Assets/music/Raffaella Carrà - Pedro (Jaxomy Agatino Romero Remix).mp3" id="1_flnaa"]
+
+[node name="Music" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_flnaa")
+autoplay = true

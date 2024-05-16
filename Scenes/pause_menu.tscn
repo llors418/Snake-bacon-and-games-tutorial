@@ -1,0 +1,58 @@
+[gd_scene load_steps=3 format=3 uid="uid://dbky1oju8e2i1"]
+
+[ext_resource type="Script" path="res://Scripts/pause_menu.gd" id="1_38ciu"]
+[ext_resource type="FontFile" uid="uid://cpsgmtf0ujdxp" path="res://Assets/fonts/PixelOperator8-Bold.ttf" id="2_3lqys"]
+
+[node name="PauseMenu" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_38ciu")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/HBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 25
+
+[node name="Label" type="Label" parent="Panel/HBoxContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_3lqys")
+theme_override_font_sizes/font_size = 25
+text = "Pause Menu"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="Panel/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+columns = 2
+
+[node name="Resume" type="Button" parent="Panel/HBoxContainer/VBoxContainer/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Resume"
+
+[node name="Restart" type="Button" parent="Panel/HBoxContainer/VBoxContainer/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Restart
+"
+
+[connection signal="pressed" from="Panel/HBoxContainer/VBoxContainer/GridContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="Panel/HBoxContainer/VBoxContainer/GridContainer/Restart" to="." method="_on_restart_pressed"]
